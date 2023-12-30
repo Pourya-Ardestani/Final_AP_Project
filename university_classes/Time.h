@@ -1,14 +1,11 @@
 #pragma once
+#include <iostream>
 class Time
 {
 	int Hour;
 	int Minute;
 public:
 	Time(int , int);
+	Time();
+	void ResetTime(int, int);
 };
-
-Time::Time(int h, int m)
-{
-	Hour = h;
-	Minute =m ;
-}
