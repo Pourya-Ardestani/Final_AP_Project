@@ -1,9 +1,25 @@
 #include <iostream>
-#include "Time.h"
 using namespace std;
+
+class UniversityClassRooms 
+{
+	int NumberOfClass;
+	int Capacity;
+	bool VideoProjector;
+	int DarsIP;
+public :
+	UniversityClassRooms();
+};
 
 int main()
 {
 
-    cout << "Hello World!\n";
+}
+
+UniversityClassRooms::UniversityClassRooms(int nummber ,int capacity ,bool Vidproj , int darsId)
+{
+	NumberOfClass = nummber;
+	Capacity= capacity ;
+	VideoProjector= Vidproj;
+	DarsIP = darsId;
 }
