@@ -25,9 +25,9 @@ void Classlocations::Reset(int nummber, int capacity, int darsId)
 
 void Classlocations::showInfo()const
 {
-	cout << "number of this class = " << NumberOfClass << endl;
-	cout << "this class has " << Capacity << " person cappacity " << endl;
-	cout << "IP of the dars that teach in this class is " << DarsIP << endl;
+	std::cout << "number of this class = " << NumberOfClass << std::endl;
+	std::cout << "this class has " << Capacity << " person cappacity " << std::endl;
+	std::cout << "IP of the dars that teach in this class is " << DarsIP << std::endl;
 	/*if (VideoProjector)
 		cout << "class has video projector ";
 	else

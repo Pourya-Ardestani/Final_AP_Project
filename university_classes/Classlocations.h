@@ -7,8 +7,9 @@ class Classlocations
 	int NumberOfClass;
 	int Capacity;
 	int DarsIP;
+	int saeat[30][5][10] = { 0 };
 public:
-	Classlocations(int, int, int = 0);
+	Classlocations(int, int=0, int = 0);
 	Classlocations();
 	void Reset(int, int, int);
 	void showInfo()const;

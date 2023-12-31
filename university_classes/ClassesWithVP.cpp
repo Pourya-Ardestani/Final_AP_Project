@@ -16,8 +16,8 @@ void ClassesWithVP::showInfo2()const
 	cout << "IP of the dars that teach in this class is " << DarsIP << endl;*/
 	showInfo();
 	if (VideoProjector)
-		cout << "class has video projector ";
+		std::cout << "class has video projector ";
 	else
-		cout << "class dosen't have video projector ";
-	cout << endl;
+		std:: cout << "class dosen't have video projector ";
+	std::cout << std::endl;
 }

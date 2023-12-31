@@ -3,16 +3,19 @@
 #include <string>
 #include <list>
 #include "Time.h"
-using namespace std;
 
 
 class Lessons
 {
 	int ID;
-	string Name;
-	string day;
+	std::string Name;
+	std::string day;
 	Time start = Time();
-	//Time Duration;
+	Time Duration;
+public:
+	Lessons();
+	//Lessons(int, std::string, std::string)
+
 
 
 };

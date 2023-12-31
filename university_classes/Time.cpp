@@ -2,7 +2,6 @@
 
 Time::Time(int h, int m)
 {
-	
 	Hour = checkh("hour", h, 18);
 	Minute = checkh("minute", m, 59);
 }
