@@ -36,7 +36,7 @@ int check(std::string name,int D, int checkof)
 {
 	while (D<0 || D>checkof)
 	{
-		std::cout << name <<"is a variable quantity Please Enter again :";
+		std::cout << name <<"is not a variable quantity Please Enter again :";
 		std::cin >> D;
 	}
 	return D;

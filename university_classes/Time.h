@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+//#include "Date.h"
+
 class Time
 {
 	int Hour;
@@ -9,3 +11,4 @@ public:
 	Time();
 	void ResetTime(int, int);
 };
+int checkh(std::string , int , int );

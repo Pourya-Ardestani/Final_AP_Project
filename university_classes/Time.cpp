@@ -2,19 +2,9 @@
 
 Time::Time(int h, int m)
 {
-	if (h < 0 || h>59)
-	{
-		std::cout << "the hour is not ___ Enter again :";
-		std::cin >> h;
-	}
-	if (m < 0 || m>59)
-	{
-		std::cout << "the minute is not ___ Enter again :";
-		std::cin >> h;
-	}
-
-	Hour = h;
-	Minute = m;
+	
+	Hour = checkh("hour", h, 18);
+	Minute = checkh("minute", m, 59);
 }
 
 Time::Time()
@@ -25,4 +15,13 @@ Time::Time()
 void Time::ResetTime(int h, int m)
 {
 	Time(h, m);
+}
+int checkh(std::string name, int D, int checkof)
+{
+	while (D<0 || D>checkof)
+	{
+		std::cout << name << "is not a variable quantity Please Enter again :";
+		std::cin >> D;
+	}
+	return D;
 }

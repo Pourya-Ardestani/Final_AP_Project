@@ -1,7 +1,6 @@
 //#include <iostream>
 //#include "Lessons.h"
 //#include "Time.h"
-#include <list>
 #include "Classlocations.h"
 #include "ClassesWithVP.h"
 
@@ -11,10 +10,10 @@ using namespace std;
 int main()
 {
 	Classlocations classWithoutVidProj[10] = { Classlocations(),Classlocations(),
-													 Classlocations(),Classlocations(),
-													 Classlocations(),Classlocations(),
-													 Classlocations(),Classlocations(),
-													 Classlocations(),Classlocations()};
+											   Classlocations(),Classlocations(),
+											   Classlocations(),Classlocations(),
+											   Classlocations(),Classlocations(),
+											   Classlocations(),Classlocations()};
 
 	//Classlocations<list> saaal ;
 
