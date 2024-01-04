@@ -3,7 +3,7 @@
 Classlocations::Classlocations()
 {
 	NumberOfClass = 0;
-	Capacity = 40;
+	Capacity = ((rand() % (8 - 4 + 1)) + 4) * 5;
 
 	DarsIP = 0;
 
@@ -22,6 +22,10 @@ void Classlocations::Reset(int nummber, int capacity, int darsId)
 	NumberOfClass = nummber;
 	Capacity = capacity;
 	DarsIP = darsId;
+}
+void Classlocations::set_IP(int n)
+{
+	DarsIP = n;
 }
 
 void Classlocations::showInfo()const

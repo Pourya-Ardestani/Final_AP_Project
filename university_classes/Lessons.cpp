@@ -21,8 +21,12 @@ void Lessons::Set_Name(std :: string name)
 void Lessons::ShowInfo()const
 {
 	std :: cout << " ID : "<< ID   << std::endl ;
-	std :: cout << "  Name : "<< Name << std::endl ;
-	std :: cout << "  Day : "<< Day  << std::endl ;
+	std :: cout << " Name : "<< Name << std::endl ;
+	std :: cout << " Day : "<< Day  << std::endl ;
+}
+void Lessons ::Set_Teacher(std :: string  teacher)
+{
+	Teacher = teacher;
 }
 
 

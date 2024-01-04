@@ -8,5 +8,4 @@ public:
 	ClassesWithVP();
 	ClassesWithVP(int , int , int , bool );
 	void showInfo2()const;
-
 };

@@ -1,52 +1,39 @@
-//#include <iostream>
-//#include "Lessons.h"
-//#include "Time.h"
-//#include "Classlocations.h"
 #include <vector>
-#include "ClassesWithVP.h"
+#include "Lessons.h"
 int Classlocations::NumberOfClass = 30; 
-int Lessons:: Number = 0;
+int Lessons ::Number = 0;
 using namespace std;
 
 
-int main()
-{/*
-	Classlocations classWithoutVidProj[10] = { Classlocations(30),Classlocations(31),
-											   Classlocations(32),Classlocations(33),
-											   Classlocations(34),Classlocations(35),
-											   Classlocations(36),Classlocations(37),
-											   Classlocations(38),Classlocations(39)};*/
-	vector<Classlocations> ListOfCLassRooms(10);
 
+void Porsesh_Az_karbar(vector<Lessons>&,int );
+
+
+int main()
+{
+
+	vector<Classlocations> ListOfCLassRooms(10);
+	vector <ClassesWithVP> listOfClassesWithVP(5);
 
 	ClassesWithVP classWithVidProj(40, 35, 0, true);
 
 	int n;
 	cout << "Please Enter the quantity of lessons :";
 	cin >> n;
-	//Lessons *Doros = new Lessons[n];
 
-
-	string StName;
 
 	vector <string> NameOflessons;
-	for (int i = 0; i < n; i++)
-	{
-		cout << "please Enter name of " << i + 1 << " lesson :";// collecting name of lesson 
-		cin >> StName;
-		NameOflessons.push_back(StName);
+	vector<string> Teacher;
+	//vector<>;
+	//vector<Barname> 
 
-	}
-	int len = NameOflessons.size();
-	vector <Lessons> LessonsExist(len);
-	for (int i = 0; i < len; i++)
-	{
-		LessonsExist.at(i).Set_Name(NameOflessons.at(i));
-	}
+	vector <Lessons> LessonsExist;
+	Porsesh_Az_karbar(LessonsExist, n);
 
-	/*
-	LessonsExist.push_back(.set_Name(StName);//creating lesson ob and give the name to obj
-	*/
+	int len = LessonsExist.size();
+	
+
+
 
 	for (int i = 0; i < len; i++)
 	{
@@ -59,3 +46,23 @@ int main()
 	classWithVidProj.showInfo2();
 
 }
+
+
+void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons ,int numberOfLessons)
+{
+
+	string s;
+	for (int i = 0; i < numberOfLessons; i++)
+	{
+		static Lessons l; 
+		cout << "please Enter name of lesson " << i + 1 << " : ";
+		cin >> s;
+		l.Set_Name(s);
+		cout << "Please Enter the name of Teacher/Master : ";
+		cin >> s;
+
+		ExistancLessons.push_back(l);
+	}
+
+}
+

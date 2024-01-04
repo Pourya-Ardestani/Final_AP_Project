@@ -1,6 +1,7 @@
 #pragma once
-#include "Lessons.h"
-#include "Time.h"
+#include<iostream>
+//#include "Lessons.h"
+//#include "Time.h"
 
 class Classlocations
 {
@@ -13,6 +14,7 @@ public:
 	Classlocations();
 	void Reset(int, int, int);
 	void showInfo()const;
+	void set_IP(int n);
 };
 
 
