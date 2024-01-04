@@ -14,6 +14,7 @@ Classlocations::Classlocations(int nummber, int capacity, int darsId)
 	NumberOfClass = nummber;
 	Capacity = capacity;
 	DarsIP = darsId;
+	NumberOfClass++;
 }
 
 void Classlocations::Reset(int nummber, int capacity, int darsId)
@@ -34,3 +35,4 @@ void Classlocations::showInfo()const
 		cout << "class dosen't have video projector ";
 	cout << endl;*/
 }
+

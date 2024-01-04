@@ -7,16 +7,15 @@
 
 class Lessons
 {
+	static int Number;
 	int ID;
 	std::string Name;
-	std::string day;
-	Time start = Time();
+	std::string Day;
+	Time Start;
 	Time Duration;
 public:
 	Lessons();
-	//Lessons(int, std::string, std::string)
-
-
-
+	void Set_Day (std:: string );
+	void Set_Name(std::string);
+	void ShowInfo()const;
 };
-

@@ -4,7 +4,7 @@
 
 class Classlocations
 {
-	int NumberOfClass;
+	static int NumberOfClass;
 	int Capacity;
 	int DarsIP;
 	int saeat[30][5][10] = { 0 };
@@ -14,3 +14,6 @@ public:
 	void Reset(int, int, int);
 	void showInfo()const;
 };
+
+
+
