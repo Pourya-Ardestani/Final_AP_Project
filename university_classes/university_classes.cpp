@@ -1,4 +1,4 @@
-#include <vector>
+//#include <vector>
 #include "Lessons.h"
 int Classlocations::NumberOfClass = 30; 
 int Lessons ::Number = 0;
@@ -23,16 +23,16 @@ int main()
 
 
 	vector <string> NameOflessons;
-	vector<string> Teacher;
+	vector <string> Teacher;
 	//vector<>;
 	//vector<Barname> 
 
 	vector <Lessons> LessonsExist;
 	Porsesh_Az_karbar(LessonsExist, n);
 
+
 	int len = LessonsExist.size();
 	
-
 
 
 	for (int i = 0; i < len; i++)
@@ -50,7 +50,6 @@ int main()
 
 void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons ,int numberOfLessons)
 {
-
 	string s;
 	for (int i = 0; i < numberOfLessons; i++)
 	{
@@ -63,6 +62,5 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons ,int numberOfLessons)
 
 		ExistancLessons.push_back(l);
 	}
-
 }
 

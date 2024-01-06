@@ -24,3 +24,13 @@ int checkh(std::string name, int D, int checkof)
 	}
 	return D;
 }
+
+
+int Time::get_min()
+{
+	return Minute;
+}
+int Time::get_h()
+{
+	return Hour;
+}
