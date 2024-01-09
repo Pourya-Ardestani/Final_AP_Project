@@ -3,10 +3,11 @@
 #include "Date.h"
 class EventlyLessons :public Lessons
 {
-	Date End_Date;
-	Date start_Date;
+	Date start;
+	int tedad_bargozari;
 public: 
-	
+	EventlyLessons(int);
 
+	
 };
 

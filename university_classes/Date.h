@@ -24,3 +24,4 @@ public:
 	int get_Y();
 };
 
+

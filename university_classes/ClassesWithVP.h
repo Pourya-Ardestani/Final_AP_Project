@@ -6,6 +6,6 @@ class ClassesWithVP : public Classlocations
 	bool VideoProjector;
 public:
 	ClassesWithVP();
-	ClassesWithVP(int , int , int , bool );
-	void showInfo2()const;
+	ClassesWithVP(int, int, int, bool);
+	void showInfo()const;
 };
