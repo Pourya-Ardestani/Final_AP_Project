@@ -30,9 +30,6 @@
     <ClCompile Include="Classlocations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClassesWithVP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EventlyLessons.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,9 +45,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Classlocations.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClassesWithVP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EventlyLessons.h">

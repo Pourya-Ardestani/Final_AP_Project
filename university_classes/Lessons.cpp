@@ -92,7 +92,11 @@ int Lessons:: get_hour()
 {
 	return Start.get_h();
 }
-//void Lessons::setLocation(std::vector <Classlocations> , )
-//{
-//	
-//}
+void Lessons ::  set_class_number(int n)
+{
+	number_of_classroom = n; 
+}
+bool Lessons ::get_need_vp()
+{
+	return V;
+}

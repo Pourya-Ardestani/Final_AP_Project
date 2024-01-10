@@ -4,24 +4,27 @@ int ret_addad(std::string );
 
 Classlocations::Classlocations()
 {
-	NumberOfClass = 0;
+	NumberOfClass = num++;
 	Capacity = ((rand() % (8 - 4 + 1)) + 4) * 5;
-
 	DarsIP = 0;
-
+	VP = false;
 }
 
-Classlocations::Classlocations(int nummber, int capacity, int darsId)
+Classlocations::Classlocations( int capacity, int darsId)
 {
-	NumberOfClass = nummber;
 	Capacity = capacity;
 	DarsIP = darsId;
-	NumberOfClass++;
+	NumberOfClass =++num ;
 }
 
-void Classlocations::Reset(int nummber, int capacity, int darsId)
+void Classlocations ::VP_set()
 {
-	NumberOfClass = nummber;
+	VP = true;
+}
+
+void Classlocations::Reset(bool v, int capacity, int darsId)
+{
+	VP = v;
 	Capacity = capacity;
 	DarsIP = darsId;
 }
@@ -47,18 +50,17 @@ void Classlocations::show_barname()
 		}
 		std::cout << std::endl;
 	}
-
-
-
 }
 
-void Classlocations:: set_rooz_saat(Lessons L)
+
+
+void Classlocations::set_rooz_saat(std::string s  , int L)
 {
-	int rooz = ret_addad(L.get_Day());
-	int hour = L.get_hour();
+	int rooz = ret_addad(s);
+	int hour = L;
 	try
 	{
-		if(rooz_saat[rooz][hour] = 1)
+		if (rooz_saat[rooz][hour] = 1)
 		{
 			throw;
 		}
@@ -66,13 +68,12 @@ void Classlocations:: set_rooz_saat(Lessons L)
 		std::cout << "class setting Done !";
 
 	}
-	catch(...)
+	catch (...)
 	{
-		std::cout << "this class has been taken befor in this time ";
-		
+		std::cout << "this class has been taken befor at this time ";
 	}
-
 }
+
 int ret_addad(std::string s )
 {
 	if (s == "saturday")
@@ -105,5 +106,4 @@ int ret_addad(std::string s )
 	}
 	else
 		return -1;
-}//
-
+}

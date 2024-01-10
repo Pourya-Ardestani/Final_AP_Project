@@ -13,7 +13,8 @@ Time::Time()
 }
 void Time::ResetTime(int h, int m)
 {
-	Time(h, m);
+	Hour = checkh("hour", h, 18);
+	Minute = checkh("minute", m, 59);
 }
 int checkh(std::string name, int D, int checkof)
 {

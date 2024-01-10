@@ -4,8 +4,8 @@
 #include <vector>
 #include "Time.h"
 
-//#include "Classlocations.h"
-//#include "ClassesWithVP.h"
+#include "Classlocations.h"
+
 
 
 class Lessons
@@ -18,6 +18,7 @@ class Lessons
 	Time Start;
 	Time Duration;
 	//Classlocations  Mahal_bargozari;
+	int number_of_classroom;
 	std::vector <int> ListOfStudentsId;
 	int Vahed;
 	bool V; // does need video projector ?
@@ -30,10 +31,13 @@ public:
 	void ShowInfo()const;
 	void add_student(int&);//7
 	void set_time();//4
-	void setLocation(int );//6
+	//void setLocation(vector<Classlocations>&);//6
+	void set_class_number(int); // *6
 	void needs_V();//5
 	std::string get_Day();
 	int get_hour();
+	bool get_need_vp();
+	
 };
 	template<class T>
 	void print_vector(std::vector<T>);

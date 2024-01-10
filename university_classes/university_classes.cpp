@@ -1,25 +1,32 @@
 //#include "Lessons.h"
 #include "EventlyLessons.h"
-#include "ClassesWithVP.h"
+
+#include "Classlocations.h"
+
 
 using namespace std;
-using namespace std;
 
 
-int Classlocations::NumberOfClass = 30; 
+
+int Classlocations::num = 30; 
 int Lessons ::Number = 0;
 
+
 //functions prototype
-void Porsesh_Az_karbar(vector<Lessons>&,int );
-template <class T>
-int show_classes_for_choose_withVP(vector<T>& C);
+void set_rooz_saat( Classlocations &  , string , int);
+int show_classes_to_choose(vector < Classlocations >& , Lessons& );
+void Porsesh_Az_karbar(vector<Lessons>&, vector < Classlocations >& , vector < Classlocations >& , int );
 
 //main:
 int main()
 {
 
 	vector<Classlocations> ListOfCLassRooms(20);
-	vector <ClassesWithVP> listOfClassesWithVP(10);
+	vector <Classlocations> listOfClassesWithVP(10);
+	for (int i = 0; i < 10; i++)
+	{
+		listOfClassesWithVP.at(i).VP_set();
+	}
 
 	//ClassesWithVP classWithVidProj(40, 35, 0, true);
 
@@ -32,7 +39,8 @@ int main()
 	vector <string> Teacher;
 
 	vector <Lessons> LessonsExist;
-	Porsesh_Az_karbar(LessonsExist, n);
+    Porsesh_Az_karbar(LessonsExist , ListOfCLassRooms, listOfClassesWithVP, n);
+
 
 
 	int len = LessonsExist.size();
@@ -52,13 +60,13 @@ int main()
 
 //functions decleration :
 
-void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons ,int numberOfLessons)
+void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocations >& C , vector < Classlocations >& VPhave,int numberOfLessons)
 {
 	string s;
 	int n;
 	for (int i = 0; i < numberOfLessons; i++)
 	{
-		Lessons l; 
+		Lessons l;
 		cout << "please Enter name of lesson " << i + 1 << " : ";
 		cin >> s;
 		l.Set_Name(s);//1
@@ -73,24 +81,76 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons ,int numberOfLessons)
 
 		l.needs_V();//5
 
-		//l.setLocation();
+		int n_c ;
+		if (l.get_need_vp())
+		{
+			n_c = show_classes_to_choose(VPhave, l);
+			l.set_class_number(n_c);
+		}
+	
+		else if (!l.get_need_vp())
+		{
+			n_c = show_classes_to_choose(C, l);
 
+			l.set_class_number(n_c);
+		}
 		ExistancLessons.push_back(l);
 		
 	}
 }
 
-template <class T>
-int show_classes_for_choose_withVP(vector<T> & C , T lecture)
+
+//int show_classes(vector <Classlocations>& C)
+//{
+//	int n;
+//	for (int i = 0; i < C.size(); i++)
+//	{
+//	
+//	}
+//}
+//
+////
+int show_classes_to_choose(vector < Classlocations > & C, Lessons &lecture)
 {
 	int chosen_number; 
 	for (int i = 0; i < C.size(); i++)
 	{
-		cout << C.at(i).showInfo();
+		C.at(i).showInfo();
+	}
+	for (int i = 0; i < C.size(); i++)
+	{
+		cout << "class" << i << " :" << endl;
+		C.at(i).show_barname();
+		cout << "--------------------------------------------";
 	}
 	cout << "please Enter class number that you want to put this class  : ";
 	cin >> chosen_number;
-	C.at(chosen_number).set_rooz_saat(T);
+	if (lecture.get_need_vp())
+		set_rooz_saat(C.at(chosen_number - 51),lecture.get_Day(), lecture.get_hour());
+	else 
+		set_rooz_saat(C.at(chosen_number - 31), lecture.get_Day(), lecture.get_hour()); 
+
 	return chosen_number;
+
+}
+//
+void set_rooz_saat(Classlocations & C,string s, int L)
+{
+	int rooz = ret_addad(s);
+	int hour = L;
+		if (C.rooz_saat[rooz][hour] = 1)
+		{
+			/*throw;*/
+		}
+		C.rooz_saat[rooz][hour] = 1;
+		std::cout << "class setting Done !";
+	/*try
+	{
+
+	}*/
+	/*catch (...)
+	{
+		std::cout << "this class has been taken befor at this time ";
+	}*/
 
 }

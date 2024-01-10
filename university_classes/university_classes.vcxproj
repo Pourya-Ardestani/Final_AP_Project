@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClassesWithVP.cpp" />
     <ClCompile Include="Classlocations.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="EventlyLessons.cpp" />
@@ -136,7 +135,6 @@
     <ClCompile Include="university_classes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ClassesWithVP.h" />
     <ClInclude Include="Classlocations.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="EventlyLessons.h" />
