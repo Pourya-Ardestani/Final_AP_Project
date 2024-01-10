@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-//#include "Lessons.h"
+#include "Lessons.h"
 //#include "Time.h"
 
 class Classlocations
@@ -17,7 +17,7 @@ public:
 	void Reset(int, int, int);
 	void showInfo()const;
 	void set_IP(int n);
-	void std_rooz_saat(int, int);// baray jelo giri az tadakhol
+	void set_rooz_saat(Lessons);// baray jelo giri az tadakhol
 	void show_barname();
 
 };

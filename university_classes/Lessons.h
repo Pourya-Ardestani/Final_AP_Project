@@ -5,7 +5,7 @@
 #include "Time.h"
 
 //#include "Classlocations.h"
-#include "ClassesWithVP.h"
+//#include "ClassesWithVP.h"
 
 
 class Lessons
@@ -17,7 +17,7 @@ class Lessons
 	std::string Teacher;
 	Time Start;
 	Time Duration;
-	Classlocations * Mahal_bargozari;
+	//Classlocations  Mahal_bargozari;
 	std::vector <int> ListOfStudentsId;
 	int Vahed;
 	bool V; // does need video projector ?
@@ -32,6 +32,8 @@ public:
 	void set_time();//4
 	void setLocation(int );//6
 	void needs_V();//5
+	std::string get_Day();
+	int get_hour();
 };
 	template<class T>
 	void print_vector(std::vector<T>);

@@ -52,10 +52,25 @@ void Classlocations::show_barname()
 
 }
 
-void std_rooz_saat(std::string s, int hour )
+void Classlocations:: set_rooz_saat(Lessons L)
 {
-	int rooz = ret_addad(s);
-	
+	int rooz = ret_addad(L.get_Day());
+	int hour = L.get_hour();
+	try
+	{
+		if(rooz_saat[rooz][hour] = 1)
+		{
+			throw;
+		}
+		rooz_saat[rooz][hour] = 1;
+		std::cout << "class setting Done !";
+
+	}
+	catch(...)
+	{
+		std::cout << "this class has been taken befor in this time ";
+		
+	}
 
 }
 int ret_addad(std::string s )

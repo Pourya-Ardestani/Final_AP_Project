@@ -29,7 +29,7 @@ void Lessons::ShowInfo()const
 	std::cout << " Teacher : " + Teacher << std::endl;
 }
 
-void Lessons ::Set_Teacher(std :: string  teacher)
+void Lessons::Set_Teacher(std :: string  teacher)
 {
 	Teacher = teacher;
 }
@@ -83,6 +83,14 @@ void Lessons::needs_V()
 	std::cin >> s;
 	if (s == "yes" || s == "Yes")
 		V = true;
+}
+std::string  Lessons::get_Day()
+{
+	return Day;
+}
+int Lessons:: get_hour()
+{
+	return Start.get_h();
 }
 //void Lessons::setLocation(std::vector <Classlocations> , )
 //{
