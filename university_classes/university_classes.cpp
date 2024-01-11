@@ -13,7 +13,8 @@ int Lessons ::Number = 0;
 
 
 //functions prototype
-void set_rooz_saat( Classlocations &  , string , int);
+//int ret_addad(std::string );
+bool set_rooz_saat( Classlocations &  , int , int);
 int show_classes_to_choose(vector < Classlocations >& , Lessons& );
 void Porsesh_Az_karbar(vector<Lessons>&, vector < Classlocations >& , vector < Classlocations >& , int );
 
@@ -49,7 +50,6 @@ int main()
 	cout << endl;
 	for (int i = 0; i < len; i++)
 	{
-		//classWithoutVidProj[i].showInfo();
 		LessonsExist.at(i).ShowInfo();
 		cout << "---------------------------";
 		cout << endl;
@@ -78,24 +78,35 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 
 		cout << "whitch day do you want to asighn this class ?";
 		cin >> s;
-		l.Set_Day(s);//3
+		l.Set_Day(ret_addad(s));//3
 
 		l.set_time();//4
 
 		l.needs_V();//5
 
 		int n_c ;
-		if (l.get_need_vp())
-		{
-			n_c = show_classes_to_choose(VPhave, l);
-			l.set_class_number(n_c);
-		}
-	
-		else if (!l.get_need_vp())
-		{
-			n_c = show_classes_to_choose(C, l);
 
-			l.set_class_number(n_c);
+		//set calass number after checking in lessons periority
+		{
+			if (l.get_need_vp())
+			{
+				n_c = show_classes_to_choose(VPhave, l);
+				l.set_class_number(n_c);
+			}
+
+			else if (!l.get_need_vp())
+			{
+				n_c = show_classes_to_choose(C, l);
+				l.set_class_number(n_c);
+			}
+		}
+
+		cout << "how many student do you want to add?";
+		cin >> n;
+		for (int i = 0; i < n; i++)
+		{
+			
+			//l.add_student();
 		}
 		ExistancLessons.push_back(l);
 		
@@ -103,49 +114,59 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 }
 
 
-//int show_classes(vector <Classlocations>& C)
-//{
-//	int n;
-//	for (int i = 0; i < C.size(); i++)
-//	{
-//	
-//	}
-//}
-//
-////
+
 int show_classes_to_choose(vector < Classlocations > & C, Lessons &lecture)
 {
 	int chosen_number; 
+
 	for (int i = 0; i < C.size(); i++)
 	{
-		C.at(i).showInfo();
-	}
-	for (int i = 0; i < C.size(); i++)//printing every class schedule
-	{
-		std::cout << "------------------------------------------------------------------------------------------------------------------------";
-		std::cout << "                                                                  class" << C.at(i).get_number() << endl;
-		C.at(i).show_barname();
-	}
-	std::cout << "please Enter class number that you want to put this class  : ";
-	std::cin >> chosen_number;
-	if (lecture.get_need_vp())
-		set_rooz_saat(C.at(chosen_number - 21),lecture.get_Day(), lecture.get_hour());
-	else 
-		set_rooz_saat(C.at(chosen_number - 1), lecture.get_Day(), lecture.get_hour()); 
+		std::cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
+		std::cout << "                class" << C.at(i).get_number() << endl;
 
+		C.at(i).show_barname();
+		C.at(i).showInfo();
+	}//printing every class schedule
+	
+	bool flag = false;
+		std::cout << "\n\nplease Enter class number that you want to put this class  : ";
+		std::cin >> chosen_number;
+	while(!flag) // check and set the time and class location for their time table
+	{
+
+		if (lecture.get_need_vp())
+			flag = set_rooz_saat(C.at(chosen_number - 21), lecture.get_Day(), lecture.get_hour());
+		else
+			flag = set_rooz_saat(C.at(chosen_number - 1), lecture.get_Day(), lecture.get_hour());
+		if (!flag)
+		{
+			cout << "Please Enter another class number because this one was full at your spacific time :";
+			cin >> chosen_number;
+		}
+
+	} // check and set the time and class location for their time table
+	
+	
 	return chosen_number;
 
 }
-//
-void set_rooz_saat(Classlocations & C,string s, int L)
-{
-	int rooz = ret_addad(s);
-	int hour = L;
-		if (C.rooz_saat[rooz][hour] = 1)
-		{
-			/*throw;*/
-		}
-		C.rooz_saat[rooz][hour] = 1;
-		std::cout << "class setting Done !";
 
-}
+//checking the class schedule and set the class 
+bool set_rooz_saat(Classlocations& C, int rooz, int L)//checking the class schedule and set the class 
+{
+	int hour = L-7;
+	
+	if (C.rooz_saat[rooz][hour] != 1)
+	{
+		C.rooz_saat[rooz][hour] = 1;
+		std::cout << "class successfuly applied !!!\n";
+		return true;
+	}
+	else
+	{
+		std::cout << "there was a lesson in this time ";
+		return false;
+	}
+
+}//checking the class schedule and set the class 
+

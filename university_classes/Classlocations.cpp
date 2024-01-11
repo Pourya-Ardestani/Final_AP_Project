@@ -36,9 +36,9 @@ void Classlocations::set_IP(int n)
 
 void Classlocations::showInfo()const
 {
-	std::cout << "number of this class = " << NumberOfClass << std::endl;
+	//std::cout << "number of this class = " << NumberOfClass << std::endl;
 	std::cout << "this class has " << Capacity << " person cappacity " << std::endl;
-	std::cout << "IP of the dars that teach in this class is " << DarsIP << std::endl;
+	//::cout << "IP of the dars that teach in this class is " << DarsIP << std::endl;
 }
 
 int Classlocations:: get_number()const
@@ -74,17 +74,18 @@ void Classlocations::set_rooz_saat(std::string s  , int L)
 			throw;
 		}
 		rooz_saat[rooz][hour] = 1;
-		std::cout << "class setting Done !";
+		std::cout << "class setting Done !\n";
 
 	}
 	catch (...)
 	{
-		std::cout << "this class has been taken befor at this time ";
+		std::cout << "this class has been taken befor at this time \n";
 	}
 }
 
 int ret_addad(std::string s )
 {
+	std::string rooz;
 	if (s == "saturday")
 	{
 		return 0;
@@ -114,7 +115,11 @@ int ret_addad(std::string s )
 		return 6;
 	}
 	else
-		return -1;
+	{
+		std::cout << "enter again:";
+		std::cin >> rooz;
+		return ret_addad(rooz);
+	}
 }
 
 void return_day_in_string(int i)
