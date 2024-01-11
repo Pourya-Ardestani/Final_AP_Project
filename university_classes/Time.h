@@ -6,7 +6,7 @@ class Time
 	int Hour;
 	int Minute;
 public:
-	Time(int , int);
+	
 	Time();
 	void ResetTime(int, int);
 	int get_h();
@@ -21,4 +21,4 @@ public:
 	}//operator overloading
 	
 };
-int checkh(std::string , int , int );
+int checkh(std::string , int , int  , int);

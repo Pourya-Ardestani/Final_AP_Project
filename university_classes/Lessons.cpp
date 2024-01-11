@@ -4,8 +4,8 @@ Lessons::Lessons()
 {
 	Name =' ';
 	Day = ' ';
-	Start.ResetTime(0, 0);
-	Duration.ResetTime(0, 0);
+	Start.ResetTime(7,0);
+	Duration.ResetTime(7,0);
 	Number++;
 	ID = Number;
 	Teacher = ' ';
@@ -47,9 +47,12 @@ void print_vector(std::vector <T> s)
 
 void Lessons:: set_time()
 {
-	std::cout << "how many VAHED do this class have : ";
-	std::cin >> Vahed;
-	
+	while(Vahed<0 || Vahed > 5)
+	{
+		std::cout << "how many VAHED do this class have : ";
+		std::cin >> Vahed;
+
+	}
 	int m, h;
 	std::cout << "start Hour :";
 	std::cin >> h;

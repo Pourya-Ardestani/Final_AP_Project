@@ -14,10 +14,11 @@ class Classlocations
 	bool VP;
 
 public:
-	int rooz_saat[7][18] = {0};
+	int rooz_saat[7][11] = {0};
 
 	Classlocations( int , int );
 	Classlocations();
+	int get_number()const;
 	void VP_set();
 	void Reset(bool, int, int);
 	void showInfo()const;

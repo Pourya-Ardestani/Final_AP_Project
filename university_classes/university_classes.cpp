@@ -1,6 +1,6 @@
 //#include "Lessons.h"
 #include "EventlyLessons.h"
-
+#include <string.h>
 #include "Classlocations.h"
 
 
@@ -8,7 +8,7 @@ using namespace std;
 
 
 
-int Classlocations::num = 30; 
+int Classlocations::num = 1; 
 int Lessons ::Number = 0;
 
 
@@ -46,12 +46,13 @@ int main()
 	int len = LessonsExist.size();
 	
 
-
+	cout << endl;
 	for (int i = 0; i < len; i++)
 	{
 		//classWithoutVidProj[i].showInfo();
 		LessonsExist.at(i).ShowInfo();
-		cout << "---------------------------"<<endl;
+		cout << "---------------------------";
+		cout << endl;
 	}
 
 	cout << "++++++++++++++++++\n";
@@ -62,17 +63,19 @@ int main()
 
 void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocations >& C , vector < Classlocations >& VPhave,int numberOfLessons)
 {
-	string s;
+	string s ;
 	int n;
 	for (int i = 0; i < numberOfLessons; i++)
 	{
 		Lessons l;
 		cout << "please Enter name of lesson " << i + 1 << " : ";
 		cin >> s;
-		l.Set_Name(s);//1
+		l.Set_Name(s );//1
+
 		cout << "Please Enter the name of Teacher/Master : ";
 		cin >> s;
 		l.Set_Teacher(s);//2
+
 		cout << "whitch day do you want to asighn this class ?";
 		cin >> s;
 		l.Set_Day(s);//3
@@ -117,18 +120,18 @@ int show_classes_to_choose(vector < Classlocations > & C, Lessons &lecture)
 	{
 		C.at(i).showInfo();
 	}
-	for (int i = 0; i < C.size(); i++)
+	for (int i = 0; i < C.size(); i++)//printing every class schedule
 	{
-		cout << "class" << i << " :" << endl;
+		std::cout << "------------------------------------------------------------------------------------------------------------------------";
+		std::cout << "                                                                  class" << C.at(i).get_number() << endl;
 		C.at(i).show_barname();
-		cout << "--------------------------------------------";
 	}
-	cout << "please Enter class number that you want to put this class  : ";
-	cin >> chosen_number;
+	std::cout << "please Enter class number that you want to put this class  : ";
+	std::cin >> chosen_number;
 	if (lecture.get_need_vp())
-		set_rooz_saat(C.at(chosen_number - 51),lecture.get_Day(), lecture.get_hour());
+		set_rooz_saat(C.at(chosen_number - 21),lecture.get_Day(), lecture.get_hour());
 	else 
-		set_rooz_saat(C.at(chosen_number - 31), lecture.get_Day(), lecture.get_hour()); 
+		set_rooz_saat(C.at(chosen_number - 1), lecture.get_Day(), lecture.get_hour()); 
 
 	return chosen_number;
 
@@ -144,13 +147,5 @@ void set_rooz_saat(Classlocations & C,string s, int L)
 		}
 		C.rooz_saat[rooz][hour] = 1;
 		std::cout << "class setting Done !";
-	/*try
-	{
-
-	}*/
-	/*catch (...)
-	{
-		std::cout << "this class has been taken befor at this time ";
-	}*/
 
 }
