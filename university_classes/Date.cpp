@@ -41,3 +41,16 @@ int Date::get_Y()
 { 
 	return Year ;
 }
+void Date :: set_Date(int d, int m, int y)
+{
+	Day = check("day", d, 31);
+	Mounth = check("mounth", m, 12);
+	Year = check("year", y, 3000);
+}
+bool Date::operator==(Date D2)
+{
+	if ((Day == D2.get_D()) && (Mounth == D2.get_M()) && (Year == D2.get_Y()))
+		return true;
+	else
+		return false;
+}

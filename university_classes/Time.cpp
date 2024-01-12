@@ -31,3 +31,11 @@ int Time::get_h()
 {
 	return Hour;
 }
+
+bool Time :: operator==(Time& T2)
+{
+	if ((Hour == T2.get_h()) && (Minute == T2.get_min()))
+		return true;
+	else
+		return false;
+}//operator overloading

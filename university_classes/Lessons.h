@@ -11,6 +11,7 @@
 
 class Lessons
 {
+protected:
 	static int Number;
 	int ID;
 	int Day;
@@ -18,7 +19,7 @@ class Lessons
 	int Vahed;
 	std::string Name;
 	std::string Teacher;
-	std::vector <int> ListOfStudentsId;///////////pakapakpakapako
+	//std::vector <int> ListOfStudentsId;///////////pakapakpakapako
 	Time Start;
 	Time Duration;
 	bool V; // does need video projector ?
@@ -42,6 +43,8 @@ public:
 	void set_capacity(int );
 	int get_capacity();
 	int  get_duration_hour();
+	bool check_students_Id(int);
+	~Lessons();
 	
 };
 	template<class T>

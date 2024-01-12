@@ -7,23 +7,30 @@
 using namespace std;
 
 
-
 int Classlocations::num = 1; 
 int Lessons ::Number = 0;
-int Students::num = 402362000;
 
 //functions prototype
-//int ret_addad(std::string );
+
 bool set_rooz_saat( Classlocations &  , int , int , int);
 int show_classes_to_choose(vector < Classlocations >& , Lessons& );
 void Porsesh_Az_karbar(vector<Lessons>&, vector < Classlocations >& , vector < Classlocations >& , int );
+bool ask_for_evently_or_normal(char);
 
 //main:
 int main()
 {
-
+	cout << R"(   
+     _             _
+    | |           | |        
+ ___| |_ __ _ _ __| |_ 
+/ __| __/ _` | '__| __|
+\__ \ || (_| | |  | |_
+|___/\__\__,_|_|   \__|
+                                          )"<<'\n';
 	vector<Classlocations> ListOfCLassRooms(20);
 	vector <Classlocations> listOfClassesWithVP(10);
+
 	for (int i = 0; i < 10; i++)
 	{
 		listOfClassesWithVP.at(i).VP_set();
@@ -40,11 +47,12 @@ int main()
 	vector <string> Teacher;
 
 	vector <Lessons> LessonsExist;
-    Porsesh_Az_karbar(LessonsExist , ListOfCLassRooms, listOfClassesWithVP, n);
+	Porsesh_Az_karbar(LessonsExist, ListOfCLassRooms, listOfClassesWithVP, n);
 
 
 
 	int len = LessonsExist.size();
+
 	
 
 	cout << endl;
@@ -56,18 +64,34 @@ int main()
 	}
 
 	cout << "++++++++++++++++++\n";
-
 }
 
 //functions decleration :
 
+
+
+//function for asking from user about every lesson
 void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocations >& C , vector < Classlocations >& VPhave,int numberOfLessons)
 {
 	string s ;
 	int n;
+
+	string ask_user;
+	cout << "\ndo you want to set Evently classes or Normal ones :(answer with  E or N) ";
+	cin >> ask_user;
+	bool soal = ask_for_evently_or_normal(ask_user[0]);
+
+
+	//else if (soal)
+	//{
+
+	//}
+	int n_c ;
+
+
 	for (int i = 0; i < numberOfLessons; i++)
 	{
-		Lessons l;
+		Lessons  l;
 		cout << "please Enter name of lesson " << i + 1 << " : ";
 		cin >> s;
 		l.Set_Name(s );//1
@@ -83,8 +107,6 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 		l.set_time();//4
 
 		l.needs_V();//5
-
-		int n_c ;
 
 		//set calass number after checking in lessons periority
 		int max_cap;
@@ -102,9 +124,12 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 				
 			}
 		}
+
+
 		max_cap = l.get_capacity();
 		cout << "how many student do you want to add?";
 		cin >> n;
+
 		while(max_cap <n)
 		{
 			cout << "capacity is less than the countity of student !!\n  Enter again :";
@@ -112,26 +137,53 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 		}
 
 
-		int sid;
-		string sname;
-		
-		for (int i = 1; i <= n; i++)
+		if (soal)
 		{
-			cout << "Enter student "<< i <<" Name :";
-			cin >> sname;
-			cout << "Enter student ID :";
-			cin >> sid;
+			EventlyLessons  E_lesson ;
+			E_lesson = l;
+			E_lesson.set_tedad_bargozari();
+			E_lesson.set_start();
 
-			l.add_student(sid, sname);
+			int sid;
+			string sname;
+
+			for (int i = 1; i <= n; i++)
+			{
+				cout << "Enter student " << i << " Name :";
+				cin >> sname;
+				cout << "Enter student ID :";
+				cin >> sid;
+
+				E_lesson.add_student(sid, sname);
+			}
+			ExistancLessons.push_back(E_lesson);
 		}
-		ExistancLessons.push_back(l);
-		
+
+
+		else 
+		{
+			int sid;
+			string sname;
+
+			for (int i = 1; i <= n; i++)
+			{
+				cout << "Enter student " << i << " Name :";
+				cin >> sname;
+				cout << "Enter student ID :";
+				cin >> sid;
+
+				l.add_student(sid, sname);
+			}
+			ExistancLessons.push_back(l);
+		}
+
 	}
+	
 }
 
 
-
-int show_classes_to_choose(vector < Classlocations > & C, Lessons &lecture)
+//function  for showing classrooms in terminal and wait to for user to choose one of them
+int show_classes_to_choose(vector < Classlocations > & C, Lessons  &lecture)
 {
 	int chosen_number; 
 
@@ -171,7 +223,7 @@ int show_classes_to_choose(vector < Classlocations > & C, Lessons &lecture)
 
 }
 
-//checking the class schedule and set the class 
+//checking the class schedule and set the class for above function
 bool set_rooz_saat(Classlocations& C, int rooz, int L , int duration)//checking the class schedule and set the class 
 {
 	int hour = L-7;
@@ -182,16 +234,11 @@ bool set_rooz_saat(Classlocations& C, int rooz, int L , int duration)//checking 
 	{
 		if (C.rooz_saat[rooz][hour+i] != 1)
 		{
-			
 			C.rooz_saat[rooz][hour+i] = 1;
-			//std::cout << "class successfuly applied !!!\n";
-			//return true;
 			flag = true;
 		}
 		else
 		{
-			//std::cout << "there was a lesson in this time ";
-			//return false;
 			flag = false;
 		}
 	}
@@ -202,4 +249,19 @@ bool set_rooz_saat(Classlocations& C, int rooz, int L , int duration)//checking 
 
 	return flag;
 }//checking the class schedule and set the class 
+
+// return answer in boolian
+bool ask_for_evently_or_normal(char s)
+{
+	if (s == 'E' || s == 'e')
+		return true;
+	else if (s == 'N' || s == 'n')
+		return false;
+	else
+	{
+		cout << "Error !!!!";
+		cout << "we assume that your Idea was making normal lesson setting ";
+		return false;
+	}
+}
 

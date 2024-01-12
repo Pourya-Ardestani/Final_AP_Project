@@ -8,7 +8,7 @@ protected:
 	std::string Name;
 
 public:
-	Person( std::string );
+	Person( );
 	void set_name(std::string);
 	void set_ID(int i);
 

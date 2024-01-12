@@ -1,8 +1,8 @@
 #include "Person.h"
 
-Person::Person(std::string s)
+Person::Person()
 {
-	Name = s;
+	Name = " ";
 }
 void Person::set_name(std::string s)
 {
@@ -13,7 +13,6 @@ void Person:: set_ID(int i)
 {
 	ID = i;
 }
-
 
 int Person::get_ID()
 {
