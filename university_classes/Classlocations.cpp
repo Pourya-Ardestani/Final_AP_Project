@@ -23,6 +23,11 @@ void Classlocations ::VP_set()
 	VP = true;
 }
 
+int Classlocations::get_cap()
+{
+	return Capacity;
+}
+
 void Classlocations::Reset(bool v, int capacity, int darsId)
 {
 	VP = v;

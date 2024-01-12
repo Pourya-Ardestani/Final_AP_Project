@@ -23,7 +23,7 @@ public:
 	void Reset(bool, int, int);
 	void showInfo()const;
 	void set_IP(int n);
-	
+	int get_cap();
 	void set_rooz_saat(std::string, int);
 	void show_barname();
 };

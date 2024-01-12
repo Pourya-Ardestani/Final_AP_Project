@@ -8,7 +8,7 @@ class Time
 public:
 	
 	Time();
-	void ResetTime(int, int);
+	void ResetTime(int, int , int=7 ,int=0);
 	int get_h();
 	int get_min();
 	//bool operator ==(const Time & );
