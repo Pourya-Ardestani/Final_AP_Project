@@ -116,7 +116,10 @@ void Lessons :: needs_V()
 	else
 		V = false; 
 }
-
+int Lessons::get_ID()
+{
+	return ID;
+}
 Lessons :: ~Lessons() {}
 // functions for semonstrat in terminal
 void Lessons::ShowInfo()const
@@ -181,4 +184,25 @@ bool Lessons::check_students_Id(int n)
 			return true;
 	}
 	return false;
+}
+
+//member function for adding property to string for transfering to file 
+void Lessons::get_x_for_file(std::string & x )
+{
+	std::string temp;
+	temp = std::to_string(ID);
+	x += "id :" + temp + '\n';
+	x += "Name :" + Name + '\n';
+	x += "Teacher :" + Teacher + '\n';
+	temp = std::to_string(Vahed);
+	x += "Vahed :" + temp + '\n';
+	if (V)
+		temp = "needs Video projector ";
+	else
+		temp = " does not needs Video projector ";
+	x += "vedio projector :" + temp + '\n';
+	temp = return_day_in_string_l(Day);
+	x += " Day of Week  :" + temp + '\n';
+	
+	x += "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n";
 }

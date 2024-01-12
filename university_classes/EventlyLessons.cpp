@@ -16,20 +16,13 @@ void EventlyLessons::set_start()
 	
 	std::cout << "PLEASE ENTER START DATE OF THIS EVENTLYU CLASS : \n";
 
-	std::cout<<"Please Enter Day : ";
-	std::cin >> d ;
+	Start_Date.set_Date();
 
-	std::cout<<"Please Enter Mounth : ";
-	std::cin >> m ;
-
-	std::cout <<"Please Enter Yeae : ";
-	std::cin >> y ;
-
-	Start_Date.set_Date(d, m, y);
+	
 }
 void EventlyLessons:: set_tedad_bargozari()
 {
-	std::cout << " how many times do you want to to administer : ";
+	std::cout << " how many times do you want to to administer this class in how many weeks?: ";
 	std::cin >> tedad_bargozari ;
 }
 EventlyLessons:: ~EventlyLessons() {}

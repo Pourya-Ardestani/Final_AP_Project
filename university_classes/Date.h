@@ -17,6 +17,7 @@ public:
 	int get_M();
 	int get_Y();
 	void set_Date(int , int , int );
+	void set_Date();
 
 };
 

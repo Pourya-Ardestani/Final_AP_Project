@@ -1,6 +1,3 @@
-﻿  Date.cpp
-  EventlyLessons.cpp
-  university_classes.cpp
-C:\Users\Apple\Desktop\final\university_classes\university_classes.cpp(54,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
+﻿  Lessons.cpp
+C:\Users\Apple\Desktop\final\university_classes\Lessons.cpp(146,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   university_classes.vcxproj -> C:\Users\Apple\Desktop\final\university_classes\x64\Debug\university_classes.exe

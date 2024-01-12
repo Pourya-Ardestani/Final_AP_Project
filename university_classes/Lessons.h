@@ -32,18 +32,19 @@ public:
 	void Set_Name(std::string);//1
 	void Set_Teacher(std::string);//2
 	void ShowInfo()const;
-	void add_student(int&);//7 //////////pakpakapkapkpakp
 	void add_student(int& , std::string);//7
 	void set_time();//4
 	void set_class_number(int); // *6
 	void needs_V();//5
-	int get_Day();
-	int get_hour();
-	bool get_need_vp();
 	void set_capacity(int );
-	int get_capacity();
-	int  get_duration_hour();
+	bool get_need_vp();
 	bool check_students_Id(int);
+	int  get_Day();
+	int  get_hour();
+	int  get_ID();
+	int  get_capacity();
+	int  get_duration_hour();
+	void get_x_for_file(std::string &);
 	~Lessons();
 	
 };

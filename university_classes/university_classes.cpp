@@ -3,6 +3,8 @@
 #include <string.h>
 #include "Classlocations.h"
 
+#include <fstream>
+
 
 using namespace std;
 
@@ -27,7 +29,7 @@ int main()
 / __| __/ _` | '__| __|
 \__ \ || (_| | |  | |_
 |___/\__\__,_|_|   \__|
-                                          )"<<'\n';
+                                          )" << '\n';
 	vector<Classlocations> ListOfCLassRooms(20);
 	vector <Classlocations> listOfClassesWithVP(10);
 
@@ -53,7 +55,7 @@ int main()
 
 	int len = LessonsExist.size();
 
-	
+
 
 	cout << endl;
 	for (int i = 0; i < len; i++)
@@ -63,7 +65,30 @@ int main()
 		cout << endl;
 	}
 
+	string x;
+	string y;
+
+
+	x += "Lessons Info  : \n";
+	for (int i = 0; i< LessonsExist.size(); i++)
+	{
+		LessonsExist.at(i).get_x_for_file(x);
+		
+	}
+
+
+	ofstream file_open("barname_class_ha.txt");
+	if (!file_open)
+	{
+		cout << "can not open the file;";
+		return 0;
+	}
+	file_open << x;
+	file_open << y;
+	file_open.close();
+
 	cout << "++++++++++++++++++\n";
+
 }
 
 //functions decleration :
@@ -77,9 +102,6 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 	int n;
 
 	string ask_user;
-	cout << "\ndo you want to set Evently classes or Normal ones :(answer with  E or N) ";
-	cin >> ask_user;
-	bool soal = ask_for_evently_or_normal(ask_user[0]);
 
 
 	//else if (soal)
@@ -91,6 +113,9 @@ void Porsesh_Az_karbar(vector<Lessons> & ExistancLessons, vector < Classlocation
 
 	for (int i = 0; i < numberOfLessons; i++)
 	{
+		cout << "\ndo you want to set Evently classes or Normal ones :(answer with  E or N) ";
+		cin >> ask_user;
+		bool soal = ask_for_evently_or_normal(ask_user[0]);
 		Lessons  l;
 		cout << "please Enter name of lesson " << i + 1 << " : ";
 		cin >> s;
