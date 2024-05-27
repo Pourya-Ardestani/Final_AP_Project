@@ -2,7 +2,6 @@
 #include "EventlyLessons.h"
 #include <string.h>
 #include "Classlocations.h"
-
 #include <fstream>
 
 
@@ -30,7 +29,7 @@ int main()
 \__ \ || (_| | |  | |_
 |___/\__\__,_|_|   \__|
                                           )" << '\n';
-	vector<Classlocations> ListOfCLassRooms(20);
+	vector <Classlocations> ListOfCLassRooms(20);
 	vector <Classlocations> listOfClassesWithVP(10);
 
 	for (int i = 0; i < 10; i++)

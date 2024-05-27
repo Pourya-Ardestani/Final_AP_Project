@@ -1,15 +1,15 @@
 Lessons Info  : 
 id :1
-Name :jfsdjf
-Teacher :dsfs
+Name :riazi
+Teacher :omidi
 Vahed :0
 vedio projector : does not needs Video projector 
-vedio projector : does not needs Video projector 
  Day of Week  :monday   
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 id :2
-Name :dfjkhdshf
-Teacher :fhdksfh
+Name :fzic
+Teacher :abdol
 Vahed :0
-vedio projector :needs Video projector 
-vedio projector :needs Video projector 
+vedio projector : does not needs Video projector 
  Day of Week  :monday   
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

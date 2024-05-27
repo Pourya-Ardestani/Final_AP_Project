@@ -11,7 +11,6 @@ public:
 	void ResetTime(int, int , int=7 ,int=0);
 	int get_h();
 	int get_min();
-	//bool operator ==(const Time & );
 	bool operator==(Time& );
 	
 };
