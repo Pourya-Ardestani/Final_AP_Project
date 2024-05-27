@@ -1,3 +1,15 @@
-﻿  Lessons.cpp
-C:\Users\Apple\Desktop\final\university_classes\Lessons.cpp(146,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  university_classes.vcxproj -> C:\Users\Apple\Desktop\final\university_classes\x64\Debug\university_classes.exe
+﻿  Classlocations.cpp
+  Date.cpp
+  EventlyLessons.cpp
+I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\EventlyLessons.cpp(15,9): warning C4101: 'm': unreferenced local variable
+I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\EventlyLessons.cpp(15,12): warning C4101: 'y': unreferenced local variable
+I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\EventlyLessons.cpp(15,6): warning C4101: 'd': unreferenced local variable
+  Lessons.cpp
+I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\Lessons.cpp(146,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Person.cpp
+  Students.cpp
+  Time.cpp
+  university_classes.cpp
+I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\university_classes.cpp(55,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  university_classes.vcxproj -> I:\university\دانشگاه اصفهان\برنامه نویسی پیشرفته\final\university_classes\x64\Debug\university_classes.exe
